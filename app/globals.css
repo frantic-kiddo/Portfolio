@@ -34,15 +34,6 @@ body {
   scroll-margin-top: 80px;
 }
 
-@font-face {
-  font-family: "Hatori";
-  src: url(var(--asset-prefix)/fonts/Hatori.otf) format("truetype");
-  font-display: swap;
-}
-
-.font-hatori {
-  font-family: "Hatori", "Times New Roman", serif;
-}
 
 .text-scan {
   display: inline-block;
@@ -60,7 +51,7 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  animation: text-scan 3.2s ease-out 0s 1 forwards;
+  animation: text-scan 3.8s ease-out 0s 1 forwards;
 }
 
 @keyframes text-scan {
@@ -84,7 +75,7 @@ body {
   position: fixed;
   inset: 0;
   z-index: 20;
-  animation: loading-fade 3.2s ease-out 0s 1 forwards;
+  animation: loading-fade 2.8s ease-out 0s 1 forwards;
 }
 
 .loading-text {
@@ -97,16 +88,71 @@ body {
   z-index: 1;
 }
 
+.loading-hero {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
 @keyframes loading-fade {
   0% {
     opacity: 1;
   }
-  85% {
+  50% {
     opacity: 1;
   }
-  100% {
+  95% {
     opacity: 0;
   }
+}
+
+.hologram-scan {
+  display: inline-block;
+  color: transparent !important;
+  text-shadow: none !important;
+  filter: none !important;
+  background-image: linear-gradient(
+    110deg,
+    #f8f7ff 0%,
+    #8af1ff 18%,
+    #b18cff 36%,
+    #ff8bd1 54%,
+    #8af1ff 72%,
+    #f8f7ff 100%
+  );
+  background-size: 200% 100%;
+  background-position: 0% 50%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text;
+
+  /* Reveal via animated mask, while the hologram gradient shifts underneath */
+  -webkit-mask-image: linear-gradient(
+    110deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0) 45%,
+    rgba(0, 0, 0, 1) 50%,
+    rgba(0, 0, 0, 0) 55%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  mask-image: linear-gradient(
+    110deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0) 45%,
+    rgba(0, 0, 0, 1) 50%,
+    rgba(0, 0, 0, 0) 55%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  -webkit-mask-size: 250% 100%;
+  mask-size: 250% 100%;
+  -webkit-mask-position: 100% 50%;
+  mask-position: 100% 50%;
+
+  animation:
+    hologram-shift 6s ease-in-out infinite,
+    scan-mask 2.8s ease-out 0s 1 forwards,
+    scan-opacity 2.8s ease-out 0s 1 forwards;
 }
 
 .hologram-text {
@@ -129,6 +175,44 @@ body {
   -webkit-text-fill-color: transparent !important;
   background-clip: text;
   animation: hologram-shift 6s ease-in-out infinite;
+}
+
+.hologram-text-line {
+  display: block !important;
+}
+
+@keyframes scan-mask {
+  0% {
+    -webkit-mask-position: 100% 50%;
+    mask-position: 100% 50%;
+  }
+  25% {
+    -webkit-mask-position: 60% 50%;
+    mask-position: 60% 50%;
+  }
+  45% {
+    -webkit-mask-position: 40% 50%;
+    mask-position: 40% 50%;
+  }
+  100% {
+    -webkit-mask-position: -50% 50%;
+    mask-position: -50% 50%;
+  }
+}
+
+@keyframes scan-opacity {
+  0% {
+    opacity: 0;
+  }
+  12% {
+    opacity: 1;
+  }
+  88% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 @keyframes hologram-shift {

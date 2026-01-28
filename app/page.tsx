@@ -22,7 +22,7 @@ import {
   TextStaggerHover,
 } from "@/components/ui/animated-slideshow"
 
-const LOADING_DURATION_MS = 3200
+const LOADING_DURATION_MS = 2000
 const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? ""
 
 const OrbitingSkills = dynamic(() => import("@/components/ui/orbiting-skills"), {
@@ -204,10 +204,28 @@ export default function Home() {
       {isLoading ? (
         <div className="loading-overlay fixed inset-0 z-20">
           <ShaderAnimation durationMs={LOADING_DURATION_MS} />
-          <div className="loading-text">
-            <h1 className="text-scan text-center text-6xl font-semibold tracking-tight md:text-8xl">
-              ADITI
-            </h1>
+          <div className="loading-hero">
+            <section className="relative flex min-h-screen w-full flex-col items-center justify-center px-4 py-16">
+              <div className="relative w-full max-w-3xl p-2">
+                <main className="relative py-10">
+                  <h1 className="mb-3 text-center text-5xl font-extrabold tracking-tighter text-white md:text-[clamp(2rem,8vw,7rem)]">
+                    <span className="opacity-0">HEY, I&apos;M</span>{" "}
+                    <span className="hologram-scan hologram-text-line">ADITI</span>
+                  </h1>
+                  <p className="px-6 text-center text-xs text-white/60 opacity-0 md:text-sm lg:text-lg">
+                    Unleashing creativity through bold visuals, seamless interfaces,
+                    and limitless possibilities.
+                  </p>
+                  <div className="my-8 flex items-center justify-center gap-1 opacity-0">
+                    <span className="relative flex h-3 w-3 items-center justify-center">
+                      <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-500 opacity-75"></span>
+                      <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500"></span>
+                    </span>
+                    <p className="text-xs text-green-500">Available for New Projects</p>
+                  </div>
+                </main>
+              </div>
+            </section>
           </div>
         </div>
       ) : null}
@@ -223,7 +241,7 @@ export default function Home() {
             <main className="relative overflow-hidden rounded-[22px] border border-white/8 bg-white/3 py-10">
               <h1 className="mb-3 text-center text-5xl font-extrabold tracking-tighter text-white md:text-[clamp(2rem,8vw,7rem)]">
                 HEY, I&apos;M{" "}
-                <span className="hologram-text">ADITI</span>
+                <span className="hologram-text hologram-text-line">ADITI</span>
               </h1>
               <p className="px-6 text-center text-xs text-white/60 md:text-sm lg:text-lg">
                 Unleashing creativity through bold visuals, seamless interfaces,
