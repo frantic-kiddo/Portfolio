@@ -434,7 +434,7 @@ export default function Home() {
             <RadialScrollGallery
               className="!min-h-[720px]"
               baseRadius={420}
-              mobileRadius={260}
+              mobileRadius={220}
               scrollDuration={2000}
               visiblePercentage={40}
             >
@@ -463,8 +463,8 @@ export default function Home() {
                       flex h-[240px] w-[160px] flex-col items-start justify-between overflow-hidden rounded-xl border border-white/10 bg-white/5 shadow-sm transition-all duration-500 sm:h-[280px] sm:w-[200px]
                       ${
                         isActive
-                          ? "scale-[1.28] -translate-y-3 border-white/20 bg-white text-black shadow-xl"
-                          : "scale-100 translate-y-2 text-white/70 opacity-60"
+                          ? "scale-[1.12] -translate-y-1 border-white/20 bg-white text-black shadow-xl sm:scale-[1.28] sm:-translate-y-3"
+                          : "scale-100 translate-y-1 text-white/70 opacity-60 sm:translate-y-2"
                       }
                     `}
                     >
