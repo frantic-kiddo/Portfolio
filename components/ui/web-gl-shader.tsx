@@ -6,10 +6,10 @@ import * as THREE from "three"
 export function WebGLShader() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const sceneRef = useRef<{
-    scene: THREE.Scene | null
-    camera: THREE.OrthographicCamera | null
-    renderer: THREE.WebGLRenderer | null
-    mesh: THREE.Mesh | null
+    scene: any
+    camera: any
+    renderer: any
+    mesh: any
     uniforms: {
       resolution: { value: [number, number] }
       time: { value: number }

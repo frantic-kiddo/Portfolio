@@ -10,9 +10,9 @@ type ShaderAnimationProps = {
 export function ShaderAnimation({ durationMs }: ShaderAnimationProps) {
   const containerRef = useRef<HTMLDivElement>(null)
   const sceneRef = useRef<{
-    camera: THREE.Camera
-    scene: THREE.Scene
-    renderer: THREE.WebGLRenderer
+    camera: any
+    scene: any
+    renderer: any
     uniforms: any
     animationId: number
   } | null>(null)

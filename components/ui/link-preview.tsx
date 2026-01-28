@@ -6,6 +6,7 @@ import React, { useCallback, useEffect, useMemo, useState } from "react"
 import {
   AnimatePresence,
   motion,
+  type Variants,
   useMotionValue,
   useSpring,
 } from "framer-motion"
@@ -137,20 +138,28 @@ export const HoverPeek = ({
     if (enableLensEffect) setIsHoveringLens(false)
   }
 
-  const cardMotionVariants = {
+  const cardMotionVariants: Variants = {
     initial: { opacity: 0, rotateY: -90, transition: { duration: 0.15 } },
     animate: {
       opacity: 1,
       rotateY: 0,
-      transition: { type: "spring", stiffness: 200, damping: 18 },
+      transition: { type: "spring" as const, stiffness: 200, damping: 18 },
     },
     exit: { opacity: 0, rotateY: 90, transition: { duration: 0.15 } },
   }
 
-  const lensMotionVariants = {
+  const lensMotionVariants: Variants = {
     initial: { opacity: 0, scale: 0.7 },
-    animate: { opacity: 1, scale: 1, transition: { duration: 0.2, ease: "easeOut" } },
-    exit: { opacity: 0, scale: 0.7, transition: { duration: 0.2, ease: "easeIn" } },
+    animate: {
+      opacity: 1,
+      scale: 1,
+      transition: { duration: 0.2, ease: [0.16, 1, 0.3, 1] },
+    },
+    exit: {
+      opacity: 0,
+      scale: 0.7,
+      transition: { duration: 0.2, ease: [0.7, 0, 0.84, 0] },
+    },
   }
 
   const triggerChild = React.isValidElement(children)
