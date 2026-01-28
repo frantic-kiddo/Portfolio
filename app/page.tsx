@@ -196,6 +196,16 @@ export default function Home() {
     return () => ctx.revert()
   }, [])
 
+  useEffect(() => {
+    if (isLoading) return
+
+    // ScrollTrigger measurements can be incorrect if it initialized while scroll was locked.
+    requestAnimationFrame(() => {
+      ScrollTrigger.refresh()
+      requestAnimationFrame(() => ScrollTrigger.refresh())
+    })
+  }, [isLoading])
+
 
 
 
@@ -420,13 +430,14 @@ export default function Home() {
 
 
         <section className="relative w-full px-4 pt-8 pb-28 -mt-12">
-          <RadialScrollGallery
-            className="!min-h-[720px]"
-            baseRadius={420}
-            mobileRadius={260}
-            scrollDuration={2000}
-            visiblePercentage={40}
-          >
+          {!isLoading ? (
+            <RadialScrollGallery
+              className="!min-h-[720px]"
+              baseRadius={420}
+              mobileRadius={260}
+              scrollDuration={2000}
+              visiblePercentage={40}
+            >
               {(hoveredIndex) => {
                 const steps = [
                     { step: "01", title: "NIKE", img: `${BASE_PATH}/gallery/01.jpg` },
@@ -482,6 +493,7 @@ export default function Home() {
                 })
               }}
             </RadialScrollGallery>
+          ) : null}
 
         </section>
 
