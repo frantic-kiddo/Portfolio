@@ -481,7 +481,7 @@ export default function Home() {
                 <div className="mt-6 space-y-3 text-sm text-white/70">
                   <div>
                     <span className="text-white/90">Email</span>{" "}
-                    <span className="text-white/60">aditi@yourdomain.com</span>
+                    <span className="text-white/60">aditichauhansing@gmail.com</span>
                   </div>
                   <div>
                     <span className="text-white/90">Location</span>{" "}
@@ -528,9 +528,6 @@ export default function Home() {
                     </a>
                   </HoverPeek>
                 </div>
-                <button className="mt-6 inline-flex items-center rounded-full border border-white/20 bg-white/10 px-5 py-2 text-sm font-medium text-white transition hover:bg-white/20">
-                  Start a Project
-                </button>
               </div>
               <div className="flex h-full items-end justify-center md:justify-end md:pr-8">
                 <LocationMap
