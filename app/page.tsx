@@ -280,12 +280,7 @@ export default function Home() {
               ABOUT ME
             </h2>
             <p className="about-animate mt-4 text-base leading-relaxed text-white/70 md:text-lg">
-              Hi, I&apos;m Aditi Singh Chauhan — a creative designer with a strong
-              interest in marketing and content-driven visuals. I enjoy turning
-              ideas into eye-catching posters and banners that actually
-              communicate, not just look good. I&apos;m currently exploring
-              real-world marketing through internships and hands-on projects
-              while building a strong creative portfolio.
+              Hi, I’m Aditi Singh Chauhan, a creative designer with a strong passion for marketing and content-driven visuals. I love transforming ideas into eye-catching posts, banners, and campaigns that don’t just look good but actually communicate. I’m exploring real-world marketing and social media through internships and hands-on projects, while building a versatile portfolio that reflects creativity, strategy, and adaptability across industries..
             </p>
             <div className="about-animate mt-6 flex flex-wrap gap-3 text-xs uppercase tracking-[0.2em] text-white/50">
               <span className="rounded-full border border-white/10 bg-white/5 px-4 py-2">
@@ -322,9 +317,9 @@ export default function Home() {
                 </div>
                 <HoverSliderImageWrap className="min-h-[220px] w-full max-w-sm overflow-visible">
                   {[
-                    "I design posters and banners for events, brands, social media, and campaigns, keeping both aesthetic appeal and marketing purpose in mind.",
-                    "Poster Design\nBanner Design (online & offline)\nSocial Media Creatives\nEvent & Campaign Visuals\nBasic Content & Layout Planning",
-                    "Visual storytelling\nClean & trendy layouts\nBrand-aligned designs\nMarketing-focused creatives\nAttention to detail & consistency",
+"I design engaging social media posts, banners, and reels that not only look appealing but also communicate effectively. I create content that connects with audiences, plan and manage content strategies across platforms, and track performance to improve reach and engagement."
+"I provide end-to-end social media support, including creating engaging posts, banners, and reels, developing content strategies, managing social media calendars, writing captions that resonate with audiences, and analyzing performance metrics to improve reach and engagement."
+"I specialize in creating visually engaging content, crafting compelling captions, planning and managing social media strategies, analyzing performance metrics, and adapting content for different platforms and industries."
                     null,
                   ].map((copy, index) => (
                     <HoverSliderText
